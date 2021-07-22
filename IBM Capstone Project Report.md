@@ -2,6 +2,7 @@
 ## Recommending prime housing locations
 
 
+
 1.1 Introduction
 
 In Singapore, the large majority of land is government-owned. Thus, most of her citizens live in public housing on leased land. The Housing and Development Board (HDB), the government agency overseeing housing development, oversees and builds the majority of new housing; these types of flats are colloquially called “HDB flats” by locals.
@@ -13,7 +14,7 @@ The HDB and private developers secure land at auctions and some higher-end housi
 In this report, we will be taking up the hypothetical scenario as a local real estate agency that seeks to help middle-income buyers seek out prime housing locations in Singapore based on their preferences. Thus, the main objective of this project is to generate different HDB residential clusters to find the ideal group of HDB flats to recommend our clients to purchase.
 
 2. Data
-
+## Recommending prime housing locations
 This report will utilise data from the following datasets and APIs,
 
 https://data.gov.sg/dataset/resale-flat-prices — Resale Flat Prices on Data.gov.sg 
