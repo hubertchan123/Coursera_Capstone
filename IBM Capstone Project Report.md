@@ -366,4 +366,4 @@ max               4.0  750000.000000  157.000000
 In conclusion, this report was able to generate clusters of housing flats in the East region of Singapore with distinct characteristics to help the hypothetical real estate agency find suitable housing locations for its clients.
 
 ### Blogpost
-TBC
+https://medium.com/@hubertchancc/singapores-hdb-resale-flats-recommending-prime-housing-locations-c0b3ac85c31c
