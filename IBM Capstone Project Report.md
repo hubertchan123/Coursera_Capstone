@@ -274,11 +274,81 @@ max               0.0  565000.000000  128.000000
 ```
 ![image](https://user-images.githubusercontent.com/49154571/126876692-36dcfdc2-0964-49fe-9921-b22e7ade6667.png)
 
-- On average, flats in this cluster costs $418,000 and is 99 sqm floor area
-- This puts it at $4,222 per sqm
+- On average, flats in this cluster costs $418,183 and is 99 sqm floor area
+- This puts it at $4,224 per sqm, making this cluster the cheapest cluster of flats
 - This cluster of flats seems to have more sports & recreational venues nearby.
 
+#### Cluster 2
+```
+       Cluster Labels   Resale Price  Floor Area
+count           171.0     171.000000  171.000000
+mean              1.0  573557.467836  128.549708
+std               0.0  116452.868010   17.951295
+min               1.0  300000.000000   67.000000
+25%               1.0  491500.000000  120.000000
+50%               1.0  552000.000000  127.000000
+75%               1.0  640000.000000  146.000000
+max               1.0  915000.000000  156.000000
+```
+![image](https://user-images.githubusercontent.com/49154571/126876811-92e32d33-cc17-4acb-b831-70b7a969d182.png)
 
+- On average, flats in this cluster costs $573,557 and is 129 sqm floor area
+- This puts it at $4,446 per sqm
+- This cluster of flats seems to offer good transportation options as well as food close by.
+
+#### Cluster 3
+```
+       Cluster Labels   Resale Price  Floor Area
+count           190.0     190.000000  190.000000
+mean              2.0  313637.705263   73.105263
+std               0.0   54950.550580   11.614144
+min               2.0  240000.000000   59.000000
+25%               2.0  280000.000000   67.000000
+50%               2.0  300000.000000   68.000000
+75%               2.0  340000.000000   82.000000
+max               2.0  603000.000000  134.000000
+```
+![image](https://user-images.githubusercontent.com/49154571/126876843-8907eb5c-305e-44fe-ad7d-e3c43c552588.png)
+
+- On average, flats in this cluster costs $313,637 and is 73 sqm floor area
+- This puts it at $4,296 per sqm
+- This cluster of flats has lots of food options close by.
+
+#### Cluster 4
+```
+       Cluster Labels   Resale Price  Floor Area
+count           117.0     117.000000  117.000000
+mean              3.0  533238.145299   98.777778
+std               0.0  115975.543921   18.163107
+min               3.0  258000.000000   47.000000
+25%               3.0  460000.000000   93.000000
+50%               3.0  500000.000000   97.000000
+75%               3.0  585000.000000  108.000000
+max               3.0  838000.000000  145.000000
+```
+![image](https://user-images.githubusercontent.com/49154571/126876877-53b079f8-4555-44dd-b0e7-407eb37792be.png)
+
+- On average, flats in this cluster costs $533,238 and is 99 sqm floor area
+- This puts it at $5,386 per sqm, making this cluster the most expensive cluster of flats
+- This cluster of flats seems to be close to nature and has a good mixture of sports and recreational venues
+
+#### Cluster 5
+```
+       Cluster Labels   Resale Price  Floor Area
+count            65.0      65.000000   65.000000
+mean              4.0  452381.169231  106.569231
+std               0.0  100588.643528   23.075941
+min               4.0  275000.000000   67.000000
+25%               4.0  374000.000000   92.000000
+50%               4.0  442000.000000  105.000000
+75%               4.0  513000.000000  124.000000
+max               4.0  750000.000000  157.000000
+```
+![image](https://user-images.githubusercontent.com/49154571/126876897-a7d127cf-b486-4a29-b4c9-31c26861faa6.png)
+
+- On average, flats in this cluster costs $452,381 and is 107 sqm floor area
+- This puts it at $4,227 per sqm
+- This cluster of flats seems to be close to event spaces and sports & recreational venues
 
 
 ### 6. Conclusion
