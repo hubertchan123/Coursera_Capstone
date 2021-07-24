@@ -256,17 +256,12 @@ Here is an overview of the methodology / data manipulations conducted
   map_clusters
   ```
   ![image](https://user-images.githubusercontent.com/49154571/126877306-d5cec5bb-2dcc-4d48-b680-212d06d35e89.png)
-  ![image](https://user-images.githubusercontent.com/49154571/126877321-5885c0c6-a554-455b-9928-3ee7612bdbab.png)
-  ![image](https://user-images.githubusercontent.com/49154571/126877317-8a7cfb13-9fa1-4610-8e2a-55935228b80a.png)
-  ![image](https://user-images.githubusercontent.com/49154571/126877335-78165053-f98e-4978-b4d7-1672edb1aa19.png)
-  ![image](https://user-images.githubusercontent.com/49154571/126877342-f71432bd-e6c6-41ec-a30e-a0f0b62ccf8d.png)
-  ![image](https://user-images.githubusercontent.com/49154571/126877351-81ba5c95-8f2e-4394-a1ab-bb29e3d06294.png)
-  
-  Red: Cluster 1
-  Purple: Cluster 2
-  Blue: Cluster 3
-  Green: Cluster 4
-  Orange: Cluster 5
+
+  - Red: Cluster 1
+  - Purple: Cluster 2
+  - Blue: Cluster 3
+  - Green: Cluster 4
+  - Orange: Cluster 5
 
 ### 4. Results & Discussion
 
