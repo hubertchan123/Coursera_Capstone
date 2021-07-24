@@ -10,7 +10,7 @@ The HDB and private developers secure land at auctions and some higher-end housi
 
 ### 1.2 Business Problem
 
-In this report, we will be taking up the hypothetical scenario as a local real estate agency that seeks to help middle-income buyers seek out prime housing locations in Singapore based on their preferences. Thus, the main objective of this project is to generate different HDB residential clusters to find the ideal group of HDB flats to recommend our clients to purchase.
+Land is a precious resource in Singapore, naturally, purchasing a home in the country is an important financial commitment. In this report, we will be taking up the hypothetical scenario as a local real estate agency that seeks to help middle-income buyers seek out prime housing locations in Singapore based on their preferences. Thus, the main objective of this project is to provide different housing location options based on different HDB types of residential clusters generated.
 
 ### 2. Data
 
