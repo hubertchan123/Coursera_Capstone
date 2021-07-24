@@ -35,6 +35,7 @@ This report will utilise data from the following datasets and APIs,
   ![image](https://user-images.githubusercontent.com/49154571/126875913-c80b8b7d-5f5c-4034-ae49-dccd6356a3f3.png)
   
   #### B. Preparing OneMap API to obtain the geo-coordinates
+  Credits to: [Yexi Yuan](https://towardsdatascience.com/working-with-apis-in-data-science-explore-bit-rent-theory-in-singapores-hdb-resale-market-d7760fdfc601) 
   ```
   # List of addresses
   list_of_address = hdb_east['address'].tolist()
