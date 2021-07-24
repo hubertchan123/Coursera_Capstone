@@ -274,12 +274,7 @@ max               0.0  565000.000000  128.000000
 ```
 ![image](https://user-images.githubusercontent.com/49154571/126876692-36dcfdc2-0964-49fe-9921-b22e7ade6667.png)
 
-Cluster 1: On average, costs 418,000 and is 99 sqm floor area
-Additionally,
-1st Most Common Venues: Skate parks, parks, and pool
-2nd Most Common Venues: Yoga studios, supermarket, playground
-3rd Most Common Venues: F&B, farms
-
+On average, costs 418,000 and is 99 sqm floor area
 This cluster of flats seems to have more sports & recreational venues nearby.
 
 
