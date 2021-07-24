@@ -260,7 +260,7 @@ Here is an overview of the methodology / data manipulations conducted
 
 ### 4. Results & Discussion
 
-#### Cluster 1
+#### Cluster 1: Affordable & Active
 ```
        Cluster Labels   Resale Price  Floor Area
 count            88.0      88.000000   88.000000
@@ -277,8 +277,9 @@ max               0.0  565000.000000  128.000000
 - On average, flats in this cluster costs $418,183 and is 99 sqm floor area
 - This puts it at $4,224 per sqm, making this cluster the cheapest cluster of flats
 - This cluster of flats seems to have more sports & recreational venues nearby.
+- As a result, we can recommend this cluster of flats to buyers who are looking for affordable flats and prefer to have an active lifestyle.
 
-#### Cluster 2
+#### Cluster 2: Spacious & Accessible
 ```
        Cluster Labels   Resale Price  Floor Area
 count           171.0     171.000000  171.000000
@@ -292,11 +293,12 @@ max               1.0  915000.000000  156.000000
 ```
 ![image](https://user-images.githubusercontent.com/49154571/126876811-92e32d33-cc17-4acb-b831-70b7a969d182.png)
 
-- On average, flats in this cluster costs $573,557 and is 129 sqm floor area
+- On average, flats in this cluster costs $573,557 and is 129 sqm floor area (largest set of flats)
 - This puts it at $4,446 per sqm
 - This cluster of flats seems to offer good transportation options as well as food close by.
+- As a result, we can recommend this cluster of flats to buyers who are looking for bigger flats and prefer to have ready access to public transport.
 
-#### Cluster 3
+#### Cluster 3: Compact & For Foodies
 ```
        Cluster Labels   Resale Price  Floor Area
 count           190.0     190.000000  190.000000
@@ -310,11 +312,12 @@ max               2.0  603000.000000  134.000000
 ```
 ![image](https://user-images.githubusercontent.com/49154571/126876843-8907eb5c-305e-44fe-ad7d-e3c43c552588.png)
 
-- On average, flats in this cluster costs $313,637 and is 73 sqm floor area
+- On average, flats in this cluster costs $313,637 and is 73 sqm floor area (smallest set of flats)
 - This puts it at $4,296 per sqm
 - This cluster of flats has lots of food options close by.
+- As a result, we can recommend this cluster of flats to buyers who are looking for smaller flats (or living in smaller numbers) and prefer to have ready access to food.
 
-#### Cluster 4
+#### Cluster 4: Nature & Recreation
 ```
        Cluster Labels   Resale Price  Floor Area
 count           117.0     117.000000  117.000000
@@ -331,8 +334,9 @@ max               3.0  838000.000000  145.000000
 - On average, flats in this cluster costs $533,238 and is 99 sqm floor area
 - This puts it at $5,386 per sqm, making this cluster the most expensive cluster of flats
 - This cluster of flats seems to be close to nature and has a good mixture of sports and recreational venues
+- As a result, we can recommend this cluster of flats to buyers who are looking for flats that are close to nature and seeking an active lifestyle.
 
-#### Cluster 5
+#### Cluster 5: Events & Recreation
 ```
        Cluster Labels   Resale Price  Floor Area
 count            65.0      65.000000   65.000000
@@ -349,11 +353,11 @@ max               4.0  750000.000000  157.000000
 - On average, flats in this cluster costs $452,381 and is 107 sqm floor area
 - This puts it at $4,227 per sqm
 - This cluster of flats seems to be close to event spaces and sports & recreational venues
+- As a result, we can recommend this cluster of flats to buyers who are looking for flats that are close to event venues and recreation.
 
 
 ### 6. Conclusion
-Conclusion section where you conclude the report.
-
+In conclusion, this report was able to generate clusters of housing flats in the East region of Singapore with distinct characteristics to help the hypothetical real estate agency find suitable housing locations for its clients.
 
 ### Blogpost
-3. Your choice of a presentation or blogpost. (10 marks)
+TBC
