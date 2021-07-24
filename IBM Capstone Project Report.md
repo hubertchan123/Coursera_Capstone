@@ -16,9 +16,9 @@ Land is a precious resource in Singapore, naturally, purchasing a home in the co
 
 This report will utilise data from the following datasets and APIs,
 
-A. https://data.gov.sg/dataset/resale-flat-prices — Resale Flat Prices on Data.gov.sg 
-B. https://docs.onemap.sg/ — OneMap API to obtain the geo-coordinates in Singapore, specifically, planning areas as well as HDB flats in resale dataset
-C. https://developer.foursquare.com/docs/places-api/ — Foursquare API will be used to explore common venues surrounding the planning area in Singapore
+- A. https://data.gov.sg/dataset/resale-flat-prices — Resale Flat Prices on Data.gov.sg 
+- B. https://docs.onemap.sg/ — OneMap API to obtain the geo-coordinates in Singapore, specifically, planning areas as well as HDB flats in resale dataset
+- C. https://developer.foursquare.com/docs/places-api/ — Foursquare API will be used to explore common venues surrounding the planning area in Singapore
 
   #### A. Preparing Resale Flat Prices on Data.gov.sg
   ```
