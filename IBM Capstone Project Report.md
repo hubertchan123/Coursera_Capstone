@@ -124,7 +124,139 @@ This report will utilise data from the following datasets and APIs,
 
 
 ### 3. Methodology
-Methodology section which represents the main component of the report where you discuss and describe any exploratory data analysis that you did, any inferential statistical testing that you performed, if any, and what machine learnings were used and why.
+Here is an overview of the methodology / data manipulations conducted
+- A. One hot encoding
+- B. Get Top Venues
+- C. K-means clustering
+- D. Elbow Method to determine optimal K-Means
+- E. Charting on clusters on map
+
+  #### A. One hot encoding
+  ```
+  # one hot encoding
+  hdb_venues_onehot = pd.get_dummies(hdb_venues[['Venue Category']], prefix="", prefix_sep="")
+
+  # add neighborhood column back to dataframe
+  hdb_venues_onehot['Neighborhood'] = hdb_venues['Neighborhood'] 
+
+  # move neighborhood column to the first column
+  fixed_columns = [hdb_venues_onehot.columns[-1]] + list(hdb_venues_onehot.columns[:-1])
+  hdb_venues_onehot = hdb_venues_onehot[fixed_columns]
+  
+  hdb_venues_grouped = hdb_venues_onehot.groupby('Neighborhood').mean().reset_index()
+  hdb_venues_grouped.head()
+  ```
+  ![image](https://user-images.githubusercontent.com/49154571/126876295-c4daaedd-cb78-4d98-8b1f-20eb875a4987.png)
+  
+  #### B. Get Top Venues
+  ```
+  def return_most_common_venues(row, num_top_venues):
+    row_categories = row.iloc[1:]
+    row_categories_sorted = row_categories.sort_values(ascending=False)
+
+    return row_categories_sorted.index.values[0:num_top_venues]
+    
+  num_top_venues = 5
+
+  indicators = ['st', 'nd', 'rd']
+
+  # create columns according to number of top venues
+  columns = ['Neighborhood']
+  for ind in np.arange(num_top_venues):
+    try:
+        columns.append('{}{} Most Common Venue'.format(ind+1, indicators[ind]))
+    except:
+        columns.append('{}th Most Common Venue'.format(ind+1))
+
+  # create a new dataframe
+  neighborhoods_venues_sorted = pd.DataFrame(columns=columns)
+  neighborhoods_venues_sorted['Neighborhood'] = hdb_venues_grouped['Neighborhood']
+
+  for ind in np.arange(hdb_venues_grouped.shape[0]):
+    neighborhoods_venues_sorted.iloc[ind, 1:] = return_most_common_venues(hdb_venues_grouped.iloc[ind, :], num_top_venues)
+
+  neighborhoods_venues_sorted.head()
+  ```
+  ![image](https://user-images.githubusercontent.com/49154571/126876304-4934ee80-2550-455c-8dc4-4daccf25bba2.png)
+  
+  #### C. Elbow Method to determine optimal K-Means
+  ```
+  #Check for optimal cluster size using the elbow method
+  sse = {}
+  for k in range(1,10):
+    kmeans = KMeans(n_clusters=k,random_state=0)
+    kmeans.fit(hdb_grouped_clustering_set)
+    hdb_grouped_clustering['Cluster Labels'] = kmeans.labels_
+    sse[k] = kmeans.inertia_
+
+  import matplotlib.pyplot as plt
+  plt.figure()
+  plt.plot(list(sse.keys()), list(sse.values()))
+  plt.xlabel("Number of clusters")
+  plt.ylabel("SSE")
+  plt.show()
+  ```
+  ![image](https://user-images.githubusercontent.com/49154571/126876369-fc7b5238-50ff-4e1e-a190-e651f46628a4.png)
+  
+  #### D. K-means clustering
+  ```
+  hdb_grouped_clustering = pd.merge(hdb_grouped_clustering, hdb_venues_grouped, on="Neighborhood")
+
+  # set number of clusters
+  kclusters = 5
+
+  hdb_grouped_clustering_set = hdb_grouped_clustering.drop('Neighborhood', 1)
+  hdb_grouped_clustering.drop(['Cluster Labels'], axis=1, inplace=True)
+
+  # run k-means clustering
+  kmeans = KMeans(n_clusters=kclusters, random_state=0).fit(hdb_grouped_clustering_set)
+
+  # check cluster labels generated for each row in the dataframe
+  kmeans.labels_[0:10]
+  
+  # add clustering labels
+  hdb_grouped_clustering.insert(0, 'Cluster Labels', kmeans.labels_)
+  hdb_grouped_clustering.head(1)
+  ```
+  ![image](https://user-images.githubusercontent.com/49154571/126876325-be889da7-c704-4c94-bbd2-f0f022fcfbdf.png)
+  
+  #### E. Charting on clusters on map
+  ```
+  address = 'Singapore, SG'
+
+  geolocator = Nominatim(user_agent="sg_explorer")
+  location = geolocator.geocode(address)
+  latitude = location.latitude
+  longitude = location.longitude
+  print('The geograpical coordinate of Singapore are {}, {}.'.format(latitude, longitude))
+  
+  # create map
+  map_clusters = folium.Map(location=[latitude, longitude], zoom_start=11)
+
+  # set color scheme for the clusters
+  x = np.arange(kclusters)
+  ys = [i + x + (i*x)**2 for i in range(kclusters)]
+  colors_array = cm.rainbow(np.linspace(0, 1, len(ys)))
+  rainbow = [colors.rgb2hex(i) for i in colors_array]
+
+  # add markers to the map
+  markers_colors = []
+  for lat, lon, poi, cluster in zip(hdb_merged['Latitude'].astype(float).values.tolist(), hdb_merged['Longitude'].astype(float).values.tolist(), hdb_merged['Neighborhood'], 
+                                  hdb_merged['Cluster Labels'].astype(int)):
+    label = folium.Popup(str(poi) + ' Cluster ' + str(cluster), parse_html=True)
+    folium.CircleMarker(
+        [lat, lon],
+        radius=5,
+        popup=label,
+        color=rainbow[cluster-1],
+        fill=True,
+        fill_color=rainbow[cluster-1],
+        fill_opacity=0.7).add_to(map_clusters)
+
+  map_clusters
+  ```
+  ![image](https://user-images.githubusercontent.com/49154571/126876472-7f6b5515-0671-4c24-84fe-fce7e593b4d4.png)
+
 
 ### 4. Results
 Results section where you discuss the results.
