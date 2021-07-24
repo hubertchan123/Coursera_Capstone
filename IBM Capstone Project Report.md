@@ -255,14 +255,33 @@ Here is an overview of the methodology / data manipulations conducted
 
   map_clusters
   ```
-  ![image](https://user-images.githubusercontent.com/49154571/126876590-e8b4110b-517e-48d8-9bac-d5247fe02f59.png)
+  ![image](https://user-images.githubusercontent.com/49154571/126876632-37660ce3-272a-44ec-9205-a412510eacbb.png)
 
 
-### 4. Results
-Results section where you discuss the results.
+### 4. Results & Discussion
 
-### 5. Discussion
-Discussion section where you discuss any observations you noted and any recommendations you can make based on the results.
+#### Cluster 1
+```
+       Cluster Labels   Resale Price  Floor Area
+count            88.0      88.000000   88.000000
+mean              0.0  418183.954545   98.943182
+std               0.0   55907.405046   13.345418
+min               0.0  255000.000000   67.000000
+25%               0.0  396500.000000   92.000000
+50%               0.0  424000.000000  104.000000
+75%               0.0  450000.000000  104.000000
+max               0.0  565000.000000  128.000000
+```
+![image](https://user-images.githubusercontent.com/49154571/126876692-36dcfdc2-0964-49fe-9921-b22e7ade6667.png)
+
+Cluster 1: On average, costs 418,000 and is 99 sqm floor area
+Additionally,
+1st Most Common Venues: Skate parks, parks, and pool
+2nd Most Common Venues: Yoga studios, supermarket, playground
+3rd Most Common Venues: F&B, farms
+
+This cluster of flats seems to have more sports & recreational venues nearby.
+
 
 ### 6. Conclusion
 Conclusion section where you conclude the report.
