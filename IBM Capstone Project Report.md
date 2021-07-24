@@ -16,11 +16,11 @@ Land is a precious resource in Singapore, naturally, purchasing a home in the co
 
 This report will utilise data from the following datasets and APIs,
 
-1. https://data.gov.sg/dataset/resale-flat-prices — Resale Flat Prices on Data.gov.sg 
-2. https://docs.onemap.sg/ — OneMap API to obtain the geo-coordinates in Singapore, specifically, planning areas as well as HDB flats in resale dataset
-3. https://developer.foursquare.com/docs/places-api/ — Foursquare API will be used to explore common venues surrounding the planning area in Singapore
+A. https://data.gov.sg/dataset/resale-flat-prices — Resale Flat Prices on Data.gov.sg 
+B. https://docs.onemap.sg/ — OneMap API to obtain the geo-coordinates in Singapore, specifically, planning areas as well as HDB flats in resale dataset
+C. https://developer.foursquare.com/docs/places-api/ — Foursquare API will be used to explore common venues surrounding the planning area in Singapore
 
-  #### 1. Preparing Resale Flat Prices on Data.gov.sg
+  #### A. Preparing Resale Flat Prices on Data.gov.sg
   ```
   url = 'https://data.gov.sg/api/action/datastore_search?resource_id=42ff9cfe-abe5-4b54-beda-c88f9bb438ee&limit=103087'
   results = requests.get(url).json()
@@ -34,7 +34,7 @@ This report will utilise data from the following datasets and APIs,
   ```
   ![image](https://user-images.githubusercontent.com/49154571/126875913-c80b8b7d-5f5c-4034-ae49-dccd6356a3f3.png)
   
-  #### 2. Preparing OneMap API to obtain the geo-coordinates
+  #### B. Preparing OneMap API to obtain the geo-coordinates
   ```
   # List of addresses
   list_of_address = hdb_east['address'].tolist()
@@ -66,7 +66,7 @@ This report will utilise data from the following datasets and APIs,
   ```
   ![image](https://user-images.githubusercontent.com/49154571/126875968-c56b6e2a-c926-4c94-8f48-8a64d1b81da9.png)
 
-  #### 3. Foursquare API to explore common venues
+  #### C. Foursquare API to explore common venues
   ```
   CLIENT_ID = '' # your Foursquare ID
   CLIENT_SECRET = '' # your Foursquare Secret
