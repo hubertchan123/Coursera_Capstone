@@ -34,7 +34,94 @@ This report will utilise data from the following datasets and APIs,
   ```
   ![image](https://user-images.githubusercontent.com/49154571/126875913-c80b8b7d-5f5c-4034-ae49-dccd6356a3f3.png)
   
+  #### Preparing OneMap API to obtain the geo-coordinates
+  ```
+  # List of addresses
+  list_of_address = hdb_east['address'].tolist()
+  add_lat = []
+  add_long = []
   
+  # Obtaining coordinates for 500 addresses
+
+  for i in range(0, len(list_of_address)):
+    query_address = list_of_address[i]
+    query_string = 'https://developers.onemap.sg/commonapi/search?searchVal='+str(query_address)+'&returnGeom=Y&getAddrDetails=Y'
+    resp = requests.get(query_string)
+
+    data_add=json.loads(resp.content)
+
+    if data_add['found'] != 0:
+        add_lat.append(data_add["results"][0]["LATITUDE"])
+        add_long.append(data_add["results"][0]["LONGITUDE"])
+
+    else:
+        add_lat.append('NotFound')
+        add_long.append('NotFound')
+
+  # Store this information in a dataframe
+
+  hdb_east['Latitude'] = add_lat
+  hdb_east['Longitude'] = add_long
+  hdb_east.head(3)
+  ```
+  ![image](https://user-images.githubusercontent.com/49154571/126875968-c56b6e2a-c926-4c94-8f48-8a64d1b81da9.png)
+
+  #### Foursquare API to explore common venues
+  ```
+  CLIENT_ID = '' # your Foursquare ID
+  CLIENT_SECRET = '' # your Foursquare Secret
+  ACCESS_TOKEN = '' # your FourSquare Access Token
+  VERSION = '20180604'
+  LIMIT = 20
+  
+  def getNearbyVenues(names, latitudes, longitudes, radius=150):
+
+    venues_list=[]
+    for name, lat, lng in zip(names, latitudes, longitudes):
+
+        # create the API request URL
+        url = 'https://api.foursquare.com/v2/venues/explore?&client_id={}&client_secret={}&v={}&ll={},{}&radius={}&limit={}'.format(
+            CLIENT_ID, 
+            CLIENT_SECRET, 
+            VERSION, 
+            lat, 
+            lng, 
+            radius, 
+            LIMIT)
+
+        # make the GET request
+        results = requests.get(url).json()["response"]['groups'][0]['items']
+
+        # return only relevant information for each nearby venue
+        venues_list.append([(
+            name, 
+            lat, 
+            lng, 
+            v['venue']['name'], 
+            v['venue']['location']['lat'], 
+            v['venue']['location']['lng'],  
+            v['venue']['categories'][0]['name']) for v in results])
+
+    nearby_venues = pd.DataFrame([item for venue_list in venues_list for item in venue_list])
+    nearby_venues.columns = ['Neighborhood', 
+                  'Neighborhood Latitude', 
+                  'Neighborhood Longitude', 
+                  'Venue', 
+                  'Venue Latitude', 
+                  'Venue Longitude', 
+                  'Venue Category']
+
+    return(nearby_venues)
+  
+  # Get top 20 venues for every HDB address in a 150m radius
+
+  hdb_venues = getNearbyVenues(names=hdb_east['Neighborhood'],
+                                   latitudes=hdb_east['Latitude'],
+                                   longitudes=hdb_east['Longitude']
+                                  )
+  ```
+  ![image](https://user-images.githubusercontent.com/49154571/126875997-96f1cab7-2afd-49a9-944c-b8bfde532945.png)
+
 
 ### 3. Methodology
 Methodology section which represents the main component of the report where you discuss and describe any exploratory data analysis that you did, any inferential statistical testing that you performed, if any, and what machine learnings were used and why.
