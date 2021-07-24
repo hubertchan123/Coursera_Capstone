@@ -274,8 +274,11 @@ max               0.0  565000.000000  128.000000
 ```
 ![image](https://user-images.githubusercontent.com/49154571/126876692-36dcfdc2-0964-49fe-9921-b22e7ade6667.png)
 
-On average, costs 418,000 and is 99 sqm floor area
-This cluster of flats seems to have more sports & recreational venues nearby.
+- On average, flats in this cluster costs $418,000 and is 99 sqm floor area
+- This puts it at $4,222 per sqm
+- This cluster of flats seems to have more sports & recreational venues nearby.
+
+
 
 
 ### 6. Conclusion
