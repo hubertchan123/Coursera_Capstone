@@ -255,7 +255,7 @@ Here is an overview of the methodology / data manipulations conducted
 
   map_clusters
   ```
-  ![image](https://user-images.githubusercontent.com/49154571/126876472-7f6b5515-0671-4c24-84fe-fce7e593b4d4.png)
+  ![image](https://user-images.githubusercontent.com/49154571/126876590-e8b4110b-517e-48d8-9bac-d5247fe02f59.png)
 
 
 ### 4. Results
