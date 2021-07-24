@@ -28,13 +28,13 @@ This report will utilise data from the following datasets and APIs,
   hdb_resale_results = results['result']['records']
   hdb_resale = json_normalize(hdb_resale_results)
 
-  #We will be using Town names, addresses, resale prices, size of flat, and remaining leasesz
+  #We will be using Town names, addresses, resale prices, size of flat, and remaining leases
   filtered_columns = ['town', 'street_name', 'block', 'resale_price', 'floor_area_sqm', 'remaining_lease']
   hdb_resale =hdb_resale.loc[:, filtered_columns]
-  
-  ![image](https://user-images.githubusercontent.com/49154571/126875913-c80b8b7d-5f5c-4034-ae49-dccd6356a3f3.png)
-
   ```
+  ![image](https://user-images.githubusercontent.com/49154571/126875913-c80b8b7d-5f5c-4034-ae49-dccd6356a3f3.png)
+  
+  
 
 ### 3. Methodology
 Methodology section which represents the main component of the report where you discuss and describe any exploratory data analysis that you did, any inferential statistical testing that you performed, if any, and what machine learnings were used and why.
